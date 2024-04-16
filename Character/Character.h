@@ -6,7 +6,7 @@ using namespace std;
 
 class Character {
 
-private:
+protected:
   string name;
   int life;
 
