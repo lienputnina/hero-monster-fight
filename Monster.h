@@ -1,7 +1,7 @@
 #ifndef Monster_h
 #define Monster_h
 
-#include "../Character/Character.h"
+#include "./Character.h"
 #include <string>
 using namespace std;
 
@@ -14,8 +14,9 @@ public:
   Monster(const string name, int life, int level);
   ~Monster();
 
-  int GetLevel();
-  void Print();
+  int GetLevel() const;
+  bool IsAlive() const;
+  void Print() const;
 };
 
 #endif

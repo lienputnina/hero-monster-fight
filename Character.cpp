@@ -90,7 +90,7 @@ bool Character::Hit(int damage) {
   return IsAlive();
 };
 
-bool Character::IsAlive() { return life > 0 ? true : false; }
+bool Character::IsAlive() const { return life > 0 ? true : false; }
 
 int Character::GetLife() { return life; };
 
