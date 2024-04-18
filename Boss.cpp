@@ -26,10 +26,7 @@ execute the Character destructor, same as in Monster class.
 */
 Boss::~Boss(){};
 
-int Boss::GetHeads() const {
-  cout << "Boss's heads: " << heads << endl;
-  return heads;
-};
+int Boss::GetHeads() const { return heads; };
 
 bool Boss::IsAlive() const { return Monster::IsAlive(); };
 
@@ -46,7 +43,9 @@ void Boss::Eat(Hero &hero) {
 void Boss::Print(Boss &boss) const {
   string bossState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintBoss: " << name << " is " << bossState << endl; // new line
+  cout << "PrintBoss: " << endl;
+  cout << name << " is " << bossState << endl;
+
   if (IsAlive()) {
     cout << name << "'s life: " << boss.GetLife() << endl;
     cout << name << "'s heads: " << boss.GetHeads() << endl;

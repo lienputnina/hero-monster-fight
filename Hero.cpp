@@ -24,22 +24,22 @@ Hero::~Hero(){};
 Implementing Kill method with a Monster object as a parameter to access Monster
 life and Monster level. GetLife() is inherited from Character class.
 */
-int Hero::Kill(Monster &monster) {
+void Hero::Kill(Monster &monster) {
   int experienceRaise = monster.GetLife() * monster.GetLevel();
   experience += experienceRaise;
-
-  cout << name << " got " << experience << " XP" << endl;
-  return experience;
 };
+
+int Hero::GetExperience() { return experience; }
 
 bool Hero::IsAlive() const { return Character::IsAlive(); };
 
 void Hero::Print(Hero &hero) {
   string heroState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintHero: " << name << " is " << heroState << endl;
+  cout << "PrintHero: " << endl;
+  cout << name << " is " << heroState << endl;
   if (IsAlive()) {
     cout << name << "'s life: " << hero.GetLife() << endl;
-    cout << name << "'s experience: " << experience << endl;
+    cout << name << "'s experience: " << hero.GetExperience() << endl;
   }
 }

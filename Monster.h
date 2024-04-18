@@ -15,10 +15,11 @@ public:
   ~Monster();
 
   int GetLevel() const;
-  bool IsAlive() const;
 
   // Taking object as parameter to use class object methods
   void Print(Monster &monster) const;
+
+  bool IsAlive() const;
 };
 
 #endif

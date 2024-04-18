@@ -3,6 +3,7 @@
 #include "Boss.h"
 
 #include <iostream>
+#include <ostream>
 
 int main() {
   Hero Lāčplēsis("Lāčplēsis", 8, 6);
@@ -20,13 +21,17 @@ int main() {
 
   cout << "Lāčplēsis fights Kangars." << endl;
   Lāčplēsis.Kill(Kangars);
+  cout << "Lāčplēsis got " << Lāčplēsis.GetExperience() << " experience."
+       << endl;
+  cout << "Kangars went to medieval jail." << endl;
   cout << "\n";
 
   cout << "Lāčplēsis is fighting MelnaisBruņinieks." << endl;
   cout << "MelnaisBruņinieks is eating Lāčplēsis." << endl;
-
-  cout << "\n";
   MelnaisBruņinieks.Eat(Lāčplēsis);
+  cout << "MelnaisBruņinieks now has " << MelnaisBruņinieks.GetHeads()
+       << " heads." << endl;
+  cout << "\n";
 
   Lāčplēsis.Print(Lāčplēsis);
   cout << "\n";
@@ -37,7 +42,7 @@ int main() {
   MelnaisBruņinieks.Print(MelnaisBruņinieks);
   cout << "\n";
 
-  cout << "The legend says that Lāčplēsis and MelnaisBruņinieks are still "
+  cout << "The legend says Lāčplēsis and MelnaisBruņinieks are still "
           "fighting to this day."
        << endl;
   cout << "\n";

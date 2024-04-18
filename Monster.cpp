@@ -21,17 +21,16 @@ its execution completes, the base class constructor will be called.
 */
 Monster::~Monster(){};
 
-int Monster::GetLevel() const {
-  cout << "Monster level: " << level << endl;
-  return level;
-};
+int Monster::GetLevel() const { return level; };
 
 bool Monster::IsAlive() const { return Character::IsAlive(); };
 
 void Monster::Print(Monster &monster) const {
   string monsterState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintMonster: " << name << " is " << monsterState << endl;
+  cout << "PrintMonster: " << endl;
+  cout << name << " is " << monsterState << endl;
+
   if (IsAlive()) {
     cout << name << "'s life: " << monster.GetLife() << endl;
     cout << name << "'s level: " << monster.GetLevel() << endl;
