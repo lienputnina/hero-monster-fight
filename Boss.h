@@ -1,7 +1,8 @@
 #ifndef Boss_h
 #define Boss_h
 
-#include "../Monster.h"
+#include "./Hero.h"
+#include "./Monster.h"
 
 class Boss : public Monster {
 
@@ -9,13 +10,13 @@ private:
   int heads;
 
 public:
-  Boss();
+  Boss(const string name, int life, int level, int heads);
   ~Boss();
 
-  int GetHeads();
-  int Eat(const Boss &Hero);
-
-  void Print(); // probably overloads PrintCharacter
+  int GetHeads() const;
+  void Eat(Hero &Hero);
+  bool IsAlive() const;
+  void Print() const;
 };
 
 #endif

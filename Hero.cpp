@@ -16,14 +16,13 @@ Hero::Hero(string heroName, int heroLife, int heroExperience)
 
 /*
 Since no resource allocation was performed, the destructor is empty. When its
-its execution completes, the base class constructor will be called.
+its execution completes, the base class destructor will be called.
 */
 Hero::~Hero(){};
 
 /*
 Implementing Kill method with a Monster object as a parameter to access Monster
-life and Monster level. GeLife method is available through inheritance from the
-Character class.
+life and Monster level. GetLife() is inherited from Character class.
 */
 int Hero::Kill(Monster &monster) {
   int experienceRaise = monster.GetLife() * monster.GetLevel();
@@ -38,8 +37,7 @@ bool Hero::IsAlive() const { return Character::IsAlive(); };
 void Hero::Print() {
   string heroState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintHero: "
-       << "Hero " << name << " is " << heroState << endl;
+  cout << "PrintHero: " << name << " is " << heroState << endl;
   if (IsAlive()) {
     cout << "Hero life: " << life << endl;
     cout << "Hero experience: " << experience << endl;

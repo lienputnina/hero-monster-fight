@@ -12,7 +12,7 @@ public:
   Hero(const string name, int life, int experience);
   ~Hero();
 
-  int Kill(Monster &Monster);
+  int Kill(Monster &monster);
   bool IsAlive() const;
   void Print();
 };

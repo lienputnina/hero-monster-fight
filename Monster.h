@@ -7,7 +7,7 @@ using namespace std;
 
 class Monster : public Character {
 
-private:
+protected:
   int level;
 
 public:

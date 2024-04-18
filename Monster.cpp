@@ -31,8 +31,7 @@ bool Monster::IsAlive() const { return Character::IsAlive(); };
 void Monster::Print() const {
   string monsterState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintMonster: "
-       << "Monster " << name << " is " << monsterState << endl;
+  cout << "PrintMonster: " << name << " is " << monsterState << endl;
   if (IsAlive()) {
     cout << "Monster life: " << life << endl;
     cout << "Monster level: " << level << endl;
