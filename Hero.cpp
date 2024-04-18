@@ -34,12 +34,12 @@ int Hero::Kill(Monster &monster) {
 
 bool Hero::IsAlive() const { return Character::IsAlive(); };
 
-void Hero::Print() {
+void Hero::Print(Hero &hero) {
   string heroState = IsAlive() ? "alive" : "dead";
 
   cout << "PrintHero: " << name << " is " << heroState << endl;
   if (IsAlive()) {
-    cout << "Hero life: " << life << endl;
-    cout << "Hero experience: " << experience << endl;
+    cout << name << "'s life: " << hero.GetLife() << endl;
+    cout << name << "'s experience: " << experience << endl;
   }
 }

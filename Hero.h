@@ -14,7 +14,9 @@ public:
 
   int Kill(Monster &monster);
   bool IsAlive() const;
-  void Print();
+
+  // Taking object as parameter to use class object methods
+  void Print(Hero &hero);
 };
 
 #endif

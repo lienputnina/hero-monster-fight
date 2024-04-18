@@ -43,13 +43,13 @@ void Boss::Eat(Hero &hero) {
   heads++;
 };
 
-void Boss::Print() const {
+void Boss::Print(Boss &boss) const {
   string bossState = IsAlive() ? "alive" : "dead";
 
-  cout << "PrintBoss: " << name << " is " << bossState << endl;
+  cout << "PrintBoss: " << name << " is " << bossState << endl; // new line
   if (IsAlive()) {
-    cout << "Boss life: " << life << endl;
-    cout << "Boss heads: " << heads << endl;
-    cout << "Boss level: " << level << endl;
+    cout << name << "'s life: " << boss.GetLife() << endl;
+    cout << name << "'s heads: " << boss.GetHeads() << endl;
+    cout << name << "'s level: " << boss.GetLevel() << endl;
   }
 }

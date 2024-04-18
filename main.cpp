@@ -4,48 +4,42 @@
 
 #include <iostream>
 
-// Todo: 1. Create a loop for Hero to kill Monster, 2. Write some comments
 int main() {
-  Hero Lāčplēsis("Lāčplēsis", 9, 6);
-  Monster Kangars("Kangars", 8, 5);
-  Boss MelnaisBruņinieks("MelnaisBruņinieks", 10, 10, 3);
+  Hero Lāčplēsis("Lāčplēsis", 8, 6);
+  Monster Kangars("Kangars", 6, 5);
+  Boss MelnaisBruņinieks("MelnaisBruņinieks", 8, 10, 3);
 
-  Lāčplēsis.Print();
-  Kangars.Print();
-  MelnaisBruņinieks.Print();
+  Lāčplēsis.Print(Lāčplēsis);
+  cout << "\n";
 
-  Kangars.GetLevel();
-  MelnaisBruņinieks.GetHeads();
+  Kangars.Print(Kangars);
+  cout << "\n";
 
-  cout << "Lāčplēsis fights Kangars" << endl;
+  MelnaisBruņinieks.Print(MelnaisBruņinieks);
+  cout << "\n";
+
+  cout << "Lāčplēsis fights Kangars." << endl;
   Lāčplēsis.Kill(Kangars);
-  Lāčplēsis.Print();
-  Kangars.Print();
   cout << "\n";
 
-  cout << "Lāčplēsis fights MelnaisBruņinieks." << endl;
-  cout << "\n";
+  cout << "Lāčplēsis is fighting MelnaisBruņinieks." << endl;
+  cout << "MelnaisBruņinieks is eating Lāčplēsis." << endl;
 
+  cout << "\n";
   MelnaisBruņinieks.Eat(Lāčplēsis);
-  Lāčplēsis.Print();
+
+  Lāčplēsis.Print(Lāčplēsis);
   cout << "\n";
 
-  MelnaisBruņinieks.Print();
+  Kangars.Print(Kangars);
   cout << "\n";
 
-  Lāčplēsis.Print();
-  cout << "\n";
-
-  Kangars.Print();
-  cout << "\n";
-
-  MelnaisBruņinieks.Print();
+  MelnaisBruņinieks.Print(MelnaisBruņinieks);
   cout << "\n";
 
   cout << "The legend says that Lāčplēsis and MelnaisBruņinieks are still "
           "fighting to this day."
        << endl;
-  cout << "Only when MelnaisBruņinieks is defeated, will our nation be free!";
   cout << "\n";
 
   return 0;

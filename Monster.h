@@ -16,7 +16,9 @@ public:
 
   int GetLevel() const;
   bool IsAlive() const;
-  void Print() const;
+
+  // Taking object as parameter to use class object methods
+  void Print(Monster &monster) const;
 };
 
 #endif

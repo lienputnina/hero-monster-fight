@@ -16,7 +16,9 @@ public:
   int GetHeads() const;
   void Eat(Hero &Hero);
   bool IsAlive() const;
-  void Print() const;
+
+  // Taking object as parameter to use class object methods
+  void Print(Boss &boss) const;
 };
 
 #endif
