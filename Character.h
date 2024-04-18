@@ -19,9 +19,9 @@ public:
   bool Hit(int);
   int GetLife();
   void Go(char move);
-  void PrintCharacter(); // might need to overload this for children
+  void PrintCharacter();
   bool IsAlive() const;
-  void PrintLife(); // might need to overload this for children
+  void PrintLife();
   int moveCount = 0;
 };
 

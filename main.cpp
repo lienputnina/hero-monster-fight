@@ -1,11 +1,19 @@
+#include "./Hero.h"
 #include "./Monster.h"
+
 #include <iostream>
 
 int main() {
-  Monster Monster1("Monsty", 8, 5);
+  Hero Lāčplēsis("Lāčplēsis", 9, 6);
+  Monster Kangars("Kangars", 8, 5);
 
-  Monster1.GetLevel();
-  Monster1.Print();
+  Kangars.GetLevel();
+
+  cout << "Lāčplēsis is fighting Kangars" << endl;
+  Lāčplēsis.Kill(Kangars);
+
+  Lāčplēsis.Print();
+  Kangars.Print();
 
   return 0;
 };
