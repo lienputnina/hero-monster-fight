@@ -6,6 +6,10 @@ using namespace std;
 
 class Character {
 
+  /*
+  Using the'protected' type to give derived classes access to the member
+  variables
+  */
 protected:
   string name;
   int life;

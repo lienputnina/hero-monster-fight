@@ -2,12 +2,10 @@
 #include <iostream>
 
 /*
-1.Initializing a Monster instance with specific names for 'name' and 'life'.
-variables, inherited from the base class ('Character'). The initializer list
-ensures that the base class constructor runs first, thus correctly initializing
-the inherited parameters.
-2.Initializing the level variable, specific for the
-Monster class
+Initializing a Monster instance with specific names for the inherited 'name'
+and 'life' variables. The initializer list ensures that the Character class
+constructor runs first. This way the inherited parameters are initialized
+correctly.
 */
 Monster::Monster(string monsterName, int monsterLife, int monsterLevel)
     : Character(monsterName, monsterLife) {
@@ -16,8 +14,8 @@ Monster::Monster(string monsterName, int monsterLife, int monsterLevel)
 };
 
 /*
-Since no resource allocation was performed, the destructor is empty. When its
-its execution completes, the base class constructor will be called.
+The destructor is empty, so that it could use the implementation of Character
+class constructor
 */
 Monster::~Monster(){};
 

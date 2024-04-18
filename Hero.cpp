@@ -3,33 +3,28 @@
 #include <iostream>
 
 /*
-1.Initializing a Hero instance with specific names for 'name' and 'life'.
-variables, inherited from the base class ('Character'). The initializer list
-ensures that the base class constructor runs first, thus correctly initializing
-the inherited parameters.
-2.Initializing the experience variable, specific for the Hero class.
+1.Initializing a Hero instance with specific names for the inherited 'name' and
+'life' variables. The initializer list ensures that the Character class
+constructor runs first. This way the inherited parameters are initialized
+correctly.
 */
 Hero::Hero(string heroName, int heroLife, int heroExperience)
     : Character(heroName, heroLife) {
-  experience = heroExperience; // Do I need a check/validation for this?
+  experience = heroExperience;
 };
 
 /*
-Since no resource allocation was performed, the destructor is empty. When its
-its execution completes, the base class destructor will be called.
+The destructor is empty, so that it could use the implementation of Character
+class constructor
 */
 Hero::~Hero(){};
 
-/*
-Implementing Kill method with a Monster object as a parameter to access Monster
-life and Monster level. GetLife() is inherited from Character class.
-*/
 void Hero::Kill(Monster &monster) {
   int experienceRaise = monster.GetLife() * monster.GetLevel();
   experience += experienceRaise;
 };
 
-int Hero::GetExperience() { return experience; }
+int Hero::GetExperience() const { return experience; }
 
 bool Hero::IsAlive() const { return Character::IsAlive(); };
 
