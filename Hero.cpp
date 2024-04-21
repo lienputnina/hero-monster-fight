@@ -26,7 +26,6 @@ void Hero::Kill(Monster &monster) {
   int heroExperienceBump = monsterLife * monsterLevel;
   monster.Hit(monsterLife);
 
-  cout << "Hero got " << heroExperienceBump << " experience." << endl;
   experience += heroExperienceBump;
 };
 

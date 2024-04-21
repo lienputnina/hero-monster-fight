@@ -84,9 +84,6 @@ bool Character::Hit(int damage) {
   // Decreasing life by the hits taken
   life -= damage;
 
-  // cout << "Character got " << damage << " hits." << endl;
-  // cout << "Is the character alive? " << (IsAlive() ? "Yes." : "No.") << endl;
-
   return IsAlive();
 };
 

@@ -28,9 +28,12 @@ int Boss::GetHeads() const { return heads; };
 bool Boss::IsAlive() const { return Monster::IsAlive(); };
 
 void Boss::Eat(Hero &hero) {
-  int lifeRaise = hero.GetLife();
-  life > 10 ? 10 : life += lifeRaise;
+  int heroLife = hero.GetLife();
+  int monsterLifeBump = heroLife;
+  life += monsterLifeBump;
   heads++;
+
+  hero.Hit(heroLife);
 };
 
 void Boss::Print(Boss &boss) const {
