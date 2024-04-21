@@ -20,8 +20,14 @@ class constructor
 Hero::~Hero(){};
 
 void Hero::Kill(Monster &monster) {
-  int experienceRaise = monster.GetLife() * monster.GetLevel();
-  experience += experienceRaise;
+  int monsterLife = monster.GetLife();
+  int monsterLevel = monster.GetLevel();
+
+  int heroExperienceBump = monsterLife * monsterLevel;
+  monster.Hit(monsterLife);
+
+  cout << "Hero got " << heroExperienceBump << " experience." << endl;
+  experience += heroExperienceBump;
 };
 
 int Hero::GetExperience() const { return experience; }
@@ -29,7 +35,7 @@ int Hero::GetExperience() const { return experience; }
 bool Hero::IsAlive() const { return Character::IsAlive(); };
 
 void Hero::Print(Hero &hero) {
-  string heroState = IsAlive() ? "alive" : "dead";
+  string heroState = IsAlive() ? "alive." : "dead.";
 
   cout << "PrintHero: " << endl;
   cout << name << " is " << heroState << endl;
