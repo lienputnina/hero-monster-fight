@@ -20,13 +20,9 @@ public:
   the base class, Character.
   */
   Monster(const string name, int life, int level);
-  ~Monster();
 
   int GetLevel() const;
-  bool IsAlive() const;
-
-  // Taking object as parameter to use Monster class object methods on it
-  void Print(Monster &monster) const;
+  void Print() const;
 };
 
 #endif

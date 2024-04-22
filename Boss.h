@@ -16,14 +16,10 @@ public:
    2. Taking 'level' as a constructor parameter to initialize the Monster class
    */
   Boss(const string name, int life, int level, int heads);
-  ~Boss();
 
   int GetHeads() const;
   void Eat(Hero &Hero);
-  bool IsAlive() const;
-
-  // Taking object as parameter to use class object methods
-  void Print(Boss &boss) const;
+  void Print() const;
 };
 
 #endif

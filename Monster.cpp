@@ -10,27 +10,18 @@ correctly.
 Monster::Monster(string monsterName, int monsterLife, int monsterLevel)
     : Character(monsterName, monsterLife) {
   // Setting the default monster level to 1 to avoid a negative level value
-  level = monsterLevel <= 0 ? 1 : monsterLevel;
+  level = monsterLevel > 0 ? monsterLevel : 1;
 };
-
-/*
-The destructor is empty, so that it could use the implementation of Character
-class constructor
-*/
-Monster::~Monster(){};
 
 int Monster::GetLevel() const { return level; };
 
-bool Monster::IsAlive() const { return Character::IsAlive(); };
-
-void Monster::Print(Monster &monster) const {
-  string monsterState = IsAlive() ? "alive." : "dead.";
-
+void Monster::Print() const {
   cout << "PrintMonster: " << endl;
-  cout << name << " is " << monsterState << endl;
+  Character::Print();
 
   if (IsAlive()) {
-    cout << name << "'s life: " << monster.GetLife() << endl;
-    cout << name << "'s level: " << monster.GetLevel() << endl;
-  }
+    cout << name << "'s level: " << GetLevel() << endl;
+  };
+
+  cout << "\n";
 }

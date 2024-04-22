@@ -89,16 +89,7 @@ bool Character::Hit(int damage) {
 
 bool Character::IsAlive() const { return life > 0 ? true : false; }
 
-int Character::GetLife() { return life; };
-
-// Printing the remaining life points of a character, if they're alive
-void Character::PrintLife() {
-  if (IsAlive()) {
-    cout << "Life points: " << life << endl;
-  } else {
-    cout << name << " is dead." << endl;
-  }
-}
+int Character::GetLife() const { return life; };
 
 void Character::PrintCharacter() {
   string characterState = IsAlive() ? "alive" : "dead";
@@ -119,4 +110,14 @@ void Character::PrintCharacter() {
   }
 
   cout << endl;
+}
+
+void Character::Print() const {
+  string characterState = IsAlive() ? "alive" : "dead";
+
+  cout << name << " is " << characterState << "." << endl;
+
+  if (IsAlive()) {
+    cout << name << "'s life: " << GetLife() << endl;
+  }
 }

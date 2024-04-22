@@ -1,4 +1,5 @@
 #include "Boss.h"
+#include "Character.h"
 #include "Monster.h"
 
 #include <iostream>
@@ -12,39 +13,29 @@ correctly.
 Boss::Boss(string bossName, int bossLife, int bossLevel, int bossHeads)
     : Monster(bossName, bossLife, bossLevel) {
   // Setting the default boss level to 1 to avoid a negative  value
-  level = bossLevel <= 0 ? 1 : bossLevel;
+  level = bossLevel > 0 ? bossLevel : 1;
   // Setting the default boss heads to 1 to avoid a negative  value
-  heads = bossHeads <= 0 ? 1 : bossHeads;
+  heads = bossHeads > 0 ? bossHeads : 1;
 };
-
-/*
-The destructor is empty, so that it could use the implementation of Character
-class constructor
-*/
-Boss::~Boss(){};
 
 int Boss::GetHeads() const { return heads; };
 
-bool Boss::IsAlive() const { return Monster::IsAlive(); };
-
 void Boss::Eat(Hero &hero) {
   int heroLife = hero.GetLife();
-  int monsterLifeBump = heroLife;
-  life += monsterLifeBump;
+  life += heroLife;
   heads++;
 
   hero.Hit(heroLife);
 };
 
-void Boss::Print(Boss &boss) const {
-  string bossState = IsAlive() ? "alive" : "dead";
-
+void Boss::Print() const {
   cout << "PrintBoss: " << endl;
-  cout << name << " is " << bossState << endl;
+  Character::Print();
 
   if (IsAlive()) {
-    cout << name << "'s life: " << boss.GetLife() << endl;
-    cout << name << "'s heads: " << boss.GetHeads() << endl;
-    cout << name << "'s level: " << boss.GetLevel() << endl;
-  }
+    cout << name << "'s heads: " << GetHeads() << endl;
+    cout << name << "'s level: " << GetLevel() << endl;
+  };
+
+  cout << "\n";
 }

@@ -8,6 +8,7 @@ class Hero : public Character {
 
 private:
   int experience;
+  int GetExperience() const; // Method for getting Hero experience value
 
 public:
   /*
@@ -15,14 +16,9 @@ public:
   the base class, Character.
   */
   Hero(const string name, int life, int experience);
-  ~Hero();
 
   void Kill(Monster &monster);
-  int GetExperience() const; // Method for getting Hero experience value
-  bool IsAlive() const;
-
-  // Taking object as parameter to use Hero class methods on it
-  void Print(Hero &hero);
+  void Print() const;
 };
 
 #endif
