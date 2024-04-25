@@ -5,11 +5,15 @@
 #include <string>
 using namespace std;
 
+/*
+Creating a Monster class through inheritance to get access to the
+public methods and protected variables from the Character class.
+*/
 class Monster : public Character {
 
   /*
-    Using the'protected' type to give the derived class access to this
-    variable
+    Using the 'protected' access type to give the derived Boss class access to
+    this variable.
     */
 protected:
   int level;

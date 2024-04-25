@@ -12,8 +12,8 @@ private:
   void PrintCharacter();
 
   /*
-    Using the'protected' type to give derived classes access to the member
-    variables
+    Using the'protected' access type to give the derived Hero and Monster
+    classes access to the member variables.
   */
 protected:
   string name;

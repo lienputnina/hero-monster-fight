@@ -12,9 +12,7 @@ correctly.
 */
 Boss::Boss(string bossName, int bossLife, int bossLevel, int bossHeads)
     : Monster(bossName, bossLife, bossLevel) {
-  // Setting the default boss level to 1 to avoid a negative  value
   level = bossLevel > 0 ? bossLevel : 1;
-  // Setting the default boss heads to 1 to avoid a negative  value
   heads = bossHeads > 0 ? bossHeads : 1;
 };
 

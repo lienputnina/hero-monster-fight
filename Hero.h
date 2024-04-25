@@ -4,6 +4,10 @@
 #include "./Character.h"
 #include "./Monster.h"
 
+/*
+Creating a Hero class through inheritance to get access to the
+public methods and protected variables from the Character class.
+*/
 class Hero : public Character {
 
 private:

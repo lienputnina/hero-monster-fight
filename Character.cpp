@@ -3,9 +3,10 @@
 #include <string>
 using namespace std;
 
-// Constructor assigns some initial values for the class objects
 /*
-Upon definition, the parameter names need to be changed to avoid confusion later
+Constructor assigns some initial values for the class objects.
+Upon definition, the parameter names need to be changed to avoid confusion
+later.
 */
 Character::Character(string characterName, int characterLife) {
   life = characterLife > 10 ? 10 : characterLife;

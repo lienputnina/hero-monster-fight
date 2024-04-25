@@ -9,7 +9,6 @@ correctly.
 */
 Monster::Monster(string monsterName, int monsterLife, int monsterLevel)
     : Character(monsterName, monsterLife) {
-  // Setting the default monster level to 1 to avoid a negative level value
   level = monsterLevel > 0 ? monsterLevel : 1;
 };
 

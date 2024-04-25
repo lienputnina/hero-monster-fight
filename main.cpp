@@ -28,6 +28,7 @@ int main() {
   MelnaisBruņinieks.Print();
 
   cout << "Lāčplēsis lies defeated. Who will now fight for our nation?" << endl;
+  cout << "\n";
 
   return 0;
 };
