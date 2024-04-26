@@ -1,6 +1,4 @@
 #include "Hero.h"
-#include "Character.h"
-#include "Monster.h"
 #include <iostream>
 
 /*

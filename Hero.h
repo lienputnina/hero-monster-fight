@@ -3,6 +3,7 @@
 
 #include "./Character.h"
 #include "./Monster.h"
+#include <string>
 
 /*
 Creating a Hero class through inheritance to get access to the

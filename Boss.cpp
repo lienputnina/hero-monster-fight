@@ -1,7 +1,4 @@
 #include "Boss.h"
-#include "Character.h"
-#include "Monster.h"
-
 #include <iostream>
 
 /*
@@ -31,8 +28,8 @@ void Boss::Print() const {
   Character::Print();
 
   if (IsAlive()) {
-    cout << name << "'s heads: " << GetHeads() << endl;
     cout << name << "'s level: " << GetLevel() << endl;
+    cout << name << "'s heads: " << GetHeads() << endl;
   };
 
   cout << "\n";
